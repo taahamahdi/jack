@@ -20,6 +20,8 @@ int kmain()
 	video_ptr_line = 0;
 	video_ptr_offset = 0;
 
+    install_interrupt_handler(1, shell_interrupt_handler);
+
 	while(1) __asm__("sti; hlt");
 	return 0;
 }
